@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF456901</color>
+    <color name="colorPrimaryDark">#BC016616</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="verde">#247726</color>
+    <color name="blueColor">#352ff5</color>
+    <color name="background">#FFD2F8DF</color>
+    <color name="letras">#FF456901</color>
+    <color name="backgroundFragment">#BC13F845</color>
+    <color name="backgroundItem">#BC75FA90</color>
+    <color name="toolbar">#BC016616</color>
+    <color name="backgroundNote">#F4F7F4</color>
+</resources>

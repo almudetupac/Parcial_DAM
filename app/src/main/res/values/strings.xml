@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">MJI</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="MJI">MJI</string>
+    <string name="txt_titulo">Inicio de sesion</string>
+    <string name="etxt_usuario">Usuario</string>
+    <string name="etxt_password">Password</string>
+    <string name="bt_init">Iniciar sesion</string>
+    <string name="bt_nUsuario">Registrarse</string>
+    <string name="bt_Ccrear">Crear Usuario</string>
+    <string name="txt_Cemail1">Ingrese email:</string>
+    <string name="txt_Cuser1">Ingrese Usuario:</string>
+    <string name="txt_Cpasswore">Ingrese Contraseña:</string>
+    <string name="txt_Cpasswore1">Reingrese Contraseña:</string>
+    <string name="txt_User">Usuario</string>
+    <string name="txt_email">Usuario@tumail.com</string>
+    <string name="txt_pass">********</string>
+    <string name="nRegistro">Crear Usuario</string>
+    <string name="txt_especie">Especie</string>
+    <string name="txt_maceta">Maceta</string>
+    <string name="plantar">Plantar</string>
+    <string name="Maceta">Mi_Maceta</string>
+    <string name="Nmaceta">¿Como se llama tu nueva plantita?</string>
+    <string name="Titulo_nItem">Plantando...</string>
+    <string name="Detalle_Titulo">Mi Maceta</string>
+    <string name="N_planta">Planta</string>
+    <string name="H_Tierra">Humedad de la tierra: </string>
+    <string name="T_Tierra">Temperaruta de la tierra: </string>
+    <string name="H_Ambiente">Humedad Ambiente: </string>
+    <string name="Porcentajes">0%</string>
+    <string name="Titulo_cPlanta">¿Que vas a plantar?</string>
+    <string name="S_Planta">Selecciona la especie de tu planta</string>
+    <string name="Crear">Crear O editar planta</string>
+    <string name="titulo_ItemNota">Seguimiento</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="borrar">Borrar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="Cancelar">Cancelar</string>
+
+
+</resources>

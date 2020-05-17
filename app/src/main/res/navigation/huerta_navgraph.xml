@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/huerta_navgraph"
+    app:startDestination="@id/listaFragment">
+
+    <fragment
+        android:id="@+id/listaFragment"
+        android:name="com.utn.parcial.Fragment.listaFragment"
+        android:label="fragment_lista"
+        tools:layout="@layout/fragment_lista" >
+        <action
+            android:id="@+id/action_listaFragment_to_newItemFragment"
+            app:destination="@id/newItemFragment"
+            app:launchSingleTop="false" />
+        <action
+            android:id="@+id/action_listaFragment_to_macetaFragment"
+            app:destination="@id/macetaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newItemFragment"
+        android:name="com.utn.parcial.Fragment.NewItemFragment"
+        android:label="fragment_new_item"
+        tools:layout="@layout/fragment_new_item" >
+        <action
+            android:id="@+id/action_newItemFragment_to_listaFragment"
+            app:destination="@id/listaFragment"
+            app:launchSingleTop="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/macetaFragment"
+        android:name="com.utn.parcial.Fragment.macetaFragment"
+        android:label="maceta_fragment"
+        tools:layout="@layout/maceta_fragment" >
+        <argument
+            android:name="planta_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_macetaFragment_to_listaFragment"
+            app:destination="@id/listaFragment" />
+        <action
+            android:id="@+id/action_macetaFragment_to_newNotaFragment7"
+            app:destination="@id/newNotaFragment7" />
+    </fragment>
+    <fragment
+        android:id="@+id/galeriaFragment"
+        android:name="com.utn.parcial.Fragment.galeriaFragment"
+        android:label="galeria_fragment"
+        tools:layout="@layout/galeria_fragment" />
+    <fragment
+        android:id="@+id/bitacoraFragment"
+        android:name="com.utn.parcial.Fragment.BitacoraFragment"
+        android:label="fragment_bitacora"
+        tools:layout="@layout/fragment_bitacora" />
+    <dialog
+        android:id="@+id/newNotaFragment7"
+        android:name="com.utn.parcial.dialogs.newNotaFragment"
+        android:label="newNotaFragment"
+        tools:layout="@layout/fragment_new_nota" />
+</navigation>
