@@ -15,7 +15,7 @@ class Foto (maceta_id: Int, foto: String){
         @ColumnInfo(name = "maceta_id")
         var maceta_id : Int
 
-        @ColumnInfo(name = "nota")
+        @ColumnInfo(name = "foto")
         var foto : String
 
         // @ColumnInfo(name = "delete")
