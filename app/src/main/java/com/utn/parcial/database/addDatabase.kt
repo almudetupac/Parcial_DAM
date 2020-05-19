@@ -12,7 +12,7 @@ import com.utn.parcial.entities.Foto
 import com.utn.parcial.entities.User
 
 
-@Database(entities = [User::class, Planta::class, Maceta::class, Nota::class, Foto::class], version = 1 , exportSchema = false)
+@Database(entities = [User::class, Planta::class, Maceta::class, Nota::class, Foto::class], version = 1  , exportSchema = false)
 
 public  abstract class appDatabase : RoomDatabase() {
 

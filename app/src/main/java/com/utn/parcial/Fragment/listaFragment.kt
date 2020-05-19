@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
-import androidx.lifecycle.ViewModelProviders
 
 
 import com.utn.parcial.R
@@ -65,19 +63,26 @@ class listaFragment : Fragment() {
 
 
     ///////////Tolbar ////////////////
+
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.lista_toolbar, menu)
+        menu.clear()
+        inflater.inflate(R.menu.toolbar_lista, menu)
         super.onCreateOptionsMenu(menu, inflater)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         val id = when(item.itemId) {
 
-            R.id.action_delete ->Snackbar.make(v, "Borrar", Snackbar.LENGTH_SHORT).show()
+            R.id.action_delete -> nav_eliminar()
+
+            R.id.action_atras -> Vaciar_lDelete()
 
             else -> ""
         }
+
         return super.onOptionsItemSelected(item)
     }
 
@@ -117,7 +122,7 @@ class listaFragment : Fragment() {
         linearLayoutManager = LinearLayoutManager(context)
         recMaceta.layoutManager = linearLayoutManager                                   //defino el layaut de la lista
 
-        macetaListAdapter = MacetaListAdapter(listMacetas!!){onItemClick(it)}             //instancio el adaptador, le mando la lista, Y escucho el clic por un lamda ( puntero a funcion)
+        macetaListAdapter = MacetaListAdapter(listMacetas!!, { onItemClick(it) }) { onItemLongClick(it) }             //instancio el adaptador, le mando la lista, Y escucho el clic por un lamda ( puntero a funcion)
         recMaceta.adapter = macetaListAdapter                                           // cargo el adaptador
 
 
@@ -125,17 +130,48 @@ class listaFragment : Fragment() {
 
     public fun onItemClick (id : Int?){
 
-        if (id != null) {
-            viewModel_maceta.id.value = id.toString()
+        if (viewModel.list_delet.size > 0){
+            for (fotoActual in viewModel.list_delet){
+                //Log.d("Click", notaActual.toString())
+                if (fotoActual == id!!){
+                    viewModel.list_delet.remove(fotoActual)
+                }
+            }
+
         }
-        Log.d("id", id!!.toString())
-        v.findNavController().navigate(listaFragmentDirections.actionListaFragmentToMacetaFragment(id.toInt()))
+        else {
+
+            viewModel_maceta.id.value = id!!.toString()
+            Log.d("id", id!!.toString())
+            v.findNavController().navigate(listaFragmentDirections.actionListaFragmentToMacetaFragment(id.toInt()))
+        }
     }
 
 
+    public fun onItemLongClick (id : Int?):Boolean{
+        if (id != null) {
+            viewModel.list_delet.add(id.toInt())
+        }
+        //Log.d("LongClick", list_delet.size.toString())
+        //v.findNavController().navigate(listaFragmentDirections.actionListaFragmentToMacetaFragment(id!!.toInt()))
+        return true
+    }
 
 
+    private fun nav_eliminar(){
+        if (viewModel.list_delet.size > 0){
+            var action = listaFragmentDirections.actionListaFragmentToBorrarFragment("Maceta")
+            v.findNavController().navigate(action)}
+    }
 
+    private fun Vaciar_lDelete(){
+        for (fotoActual in viewModel.list_delet) {
+            //Log.d("Click", notaActual.toString())
+            if (fotoActual == id!!) {
+                viewModel.list_delet.remove(fotoActual)
+            }
+        }
+    }
 
 
 

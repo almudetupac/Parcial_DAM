@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_listaFragment_to_macetaFragment"
             app:destination="@id/macetaFragment" />
+        <action
+            android:id="@+id/action_listaFragment_to_borrarFragment"
+            app:destination="@id/borrarFragment" />
     </fragment>
     <fragment
         android:id="@+id/newItemFragment"
@@ -42,6 +45,10 @@
         <action
             android:id="@+id/action_macetaFragment_to_newNotaFragment7"
             app:destination="@id/newNotaFragment7" />
+        <action
+            android:id="@+id/action_macetaFragment_to_borrarFragment"
+            app:destination="@id/borrarFragment"
+            />
     </fragment>
     <fragment
         android:id="@+id/galeriaFragment"
@@ -58,4 +65,15 @@
         android:name="com.utn.parcial.dialogs.newNotaFragment"
         android:label="newNotaFragment"
         tools:layout="@layout/fragment_new_nota" />
+
+
+    <dialog
+        android:id="@+id/borrarFragment"
+        android:name="com.utn.parcial.dialogs.BorrarFragment"
+        android:label="BorrarFragment"
+        tools:layout="@layout/borrar_fragment">
+        <argument
+            android:name="tabla"
+            app:argType="string" />
+    </dialog>
 </navigation>

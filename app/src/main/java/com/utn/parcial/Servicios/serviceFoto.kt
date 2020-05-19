@@ -49,4 +49,23 @@ class serviceFoto(v: View) {
 
         fotoDao?.insertFoto(foto)
     }
+
+    fun getFotoId(id : Int) : String
+    {
+        return fotoDao?.loadFoto(id)!!
+    }
+
+    fun getUltimaFoto(maceta_id: Int) : String
+    {
+        if ( fotoDao?.cantFotosMaceta(maceta_id)!=0)
+        {
+            return fotoDao?.loadUltimaFoto(maceta_id)!!
+        }
+        return  "@drawable/defoult_planta"
+    }
+
+    fun deletFoto (id: Int?){
+        fotoDao?.deleteFromId(id)
+    }
+
 }

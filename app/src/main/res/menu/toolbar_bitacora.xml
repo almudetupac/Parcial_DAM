@@ -7,7 +7,7 @@
         android:id="@+id/action_atras"
         android:icon="@drawable/ic_dialog_close_dark"
         android:title="@string/Cancelar"
-
+        android:visible="true"
         app:showAsAction="always" />
 
 
@@ -17,6 +17,9 @@
         android:icon="@drawable/icons8_pila_de_compost_48"
         android:title="@string/borrar"
         android:visible="true"
-        app:showAsAction="always" />
+        android:orderInCategory="1"
+        app:showAsAction="always"
+        />
+
 
 </menu>

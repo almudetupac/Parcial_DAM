@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.utn.parcial.R
 import com.utn.parcial.entities.Foto
 
@@ -31,7 +32,7 @@ class GaleriaListAdapter (private var galeriaList: MutableList<Foto?>, val adapt
 
     override fun onBindViewHolder(holder: GaleriaHolder, position: Int) {
 
-        galeriaList[position]?.foto?.let { holder.setFecha(it) }
+        galeriaList[position]?.foto?.let { holder.setFoto(it) }
 
         holder.getCardLayout().setOnClickListener {
             holder.setCardElevation("10")
@@ -58,9 +59,14 @@ class GaleriaListAdapter (private var galeriaList: MutableList<Foto?>, val adapt
         }
 
         fun setFoto(foto : String) {
-            val im_foto : ImageView = view.findViewById(R.id.im_foto)
+            val im_tem : ImageView = view.findViewById(R.id.im_tem)
 
-            //im_foto.setImageDrawable(@drawable/)
+            Glide.with(view)
+                .load(foto)
+                .fitCenter()
+                .centerCrop()
+                .into(im_tem)
+
 
         }
 

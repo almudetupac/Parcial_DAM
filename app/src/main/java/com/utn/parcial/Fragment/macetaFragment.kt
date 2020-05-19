@@ -48,17 +48,14 @@ class macetaFragment : Fragment() {
     }
 
     ///////////Tolbar ////////////////
+   /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.lista_toolbar, menu)
+        inflater.inflate(R.menu., menu)
         super.onCreateOptionsMenu(menu, inflater)
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-
-
-
 
         val id = when(item.itemId) {
 
@@ -74,7 +71,7 @@ class macetaFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
-
+*/
     /////////////////////////////////////
 
     override fun onStart() {

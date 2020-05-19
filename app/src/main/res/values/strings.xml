@@ -34,11 +34,15 @@
     <string name="Crear">Crear O editar planta</string>
     <string name="titulo_ItemNota">Seguimiento</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="borrar">Borrar</string>
     <string name="cancelar">Cancelar</string>
     <string name="Cancelar">Cancelar</string>
+    <string name="foto">FotoNueva</string>
 
+    <string name="D_Borrar">¿Esta seguro que desea  eliminar?</string>
+    <string name="T_Borrar">ATENCION</string>
+    <string name="T_nNota">Nueva Nota</string>
 
 </resources>

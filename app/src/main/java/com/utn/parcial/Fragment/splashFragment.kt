@@ -89,8 +89,8 @@ lateinit var sPlanta : servicesPlanta
 
 
         Handler().postDelayed({
-            startActivity(Intent(v.context, HuertaActivity::class.java))
-           //v.findNavController().navigate(splashFragmentDirections.actionSplashFragmentToLoginFragment())
+            //startActivity(Intent(v.context, HuertaActivity::class.java))
+           v.findNavController().navigate(splashFragmentDirections.actionSplashFragmentToLoginFragment())
 
         }, SPLASH_TIME_OUT)
     }

@@ -63,4 +63,9 @@ class serviceMaceta(v:View) {
         return plantaDao?.loadAllEspecie()
     }
 
+    fun deletMaceta (id: Int?){
+        macetaDao?.deleteFromId(id)
+    }
+
+
 }

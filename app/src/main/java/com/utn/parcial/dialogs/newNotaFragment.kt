@@ -4,6 +4,7 @@ package com.utn.parcial.dialogs
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
+
 import com.github.nikartm.button.FitButton
 import com.google.android.material.snackbar.Snackbar
 import com.utn.parcial.ViewModel.MacetaViewModel
@@ -43,9 +45,9 @@ class newNotaFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        Log.d("nota","1")
+        //Log.d("nota","1")
         v = inflater.inflate(R.layout.fragment_new_nota, container, false)
-        Log.d("nota","2")
+        //Log.d("nota","2")
         edt_nota = v.findViewById(R.id.edt_nota_dialog)
         btnAccept = v.findViewById(R.id.btn_acept_dialog)
         btnCancel = v.findViewById(R.id.btn_cancel_dialog)
@@ -63,6 +65,7 @@ class newNotaFragment : DialogFragment() {
     }
 
     var aux : Int = 0
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onStart() {
         super.onStart()
 

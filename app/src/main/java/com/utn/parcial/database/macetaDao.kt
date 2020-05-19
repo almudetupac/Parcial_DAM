@@ -18,4 +18,7 @@ public interface macetaDao {
     @Query("SELECT COUNT(*) FROM macetas")
     fun cantMacetas(): Int?
 
+    @Query("DELETE FROM macetas WHERE id = :id")
+    fun deleteFromId(id: Int?)
+
 }

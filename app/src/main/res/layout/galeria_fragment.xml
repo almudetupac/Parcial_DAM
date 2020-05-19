@@ -10,13 +10,14 @@
         android:id="@+id/rec_galeria"
         android:layout_width="409dp"
         android:layout_height="0dp"
+        android:scrollbars="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline70" />
 
     <ImageView
-        android:id="@+id/im_foto"
+        android:id="@+id/im_tem"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/defoult_planta"
@@ -33,13 +34,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="150dp" />
 
-    <Button
-        android:id="@+id/bt_2"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_btFoto"
+        android:backgroundTint="@color/verde"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src= "@drawable/camara"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/rec_galeria"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/im_foto" />
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

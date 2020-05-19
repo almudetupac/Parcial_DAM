@@ -1,12 +1,9 @@
 package com.utn.parcial.Fragment
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -53,7 +50,35 @@ class BitacoraFragment : Fragment() {
 
         return v
     }
+    ///////////Tolbar ////////////////
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        inflater.inflate(R.menu.toolbar_bitacora, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+
+
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        val id = when(item.itemId) {
+
+            R.id.action_delete -> nav_eliminar()
+
+            R.id.action_atras -> Vaciar_lDelete()
+            else -> ""
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
+    /////////////////////////////////////
 
 
 
@@ -104,14 +129,14 @@ class BitacoraFragment : Fragment() {
 
 
     public fun onItemClick (id : Int?) {
-        //Log.d("Click_Id", id.toString())
+
                 if (viewModel.list_delet.size > 0){
                     if (id != null) {
 
                         for (notaActual in viewModel.list_delet){
                             //Log.d("Click", notaActual.toString())
-                            if (viewModel.list_delet[notaActual] == id){
-                                viewModel.list_delet.removeAt(notaActual)
+                            if (notaActual == id){
+                                viewModel.list_delet.remove(notaActual)
                             }
                         }
                     }
@@ -124,14 +149,23 @@ class BitacoraFragment : Fragment() {
         if (id != null) {
             viewModel.list_delet.add(id.toInt())
         }
-        //Log.d("LongClick", list_delet.size.toString())
-        //v.findNavController().navigate(listaFragmentDirections.actionListaFragmentToMacetaFragment(id!!.toInt()))
         return true
     }
 
 
-
-    private fun lEliminar(){
-
+    private fun nav_eliminar(){
+        if (viewModel.list_delet.size > 0){
+       var action = macetaFragmentDirections.actionMacetaFragmentToBorrarFragment ("Nota")
+        v.findNavController().navigate(action)}
     }
+    private fun Vaciar_lDelete(){
+        for (fotoActual in viewModel.list_delet) {
+            //Log.d("Click", notaActual.toString())
+            if (fotoActual == id!!) {
+                viewModel.list_delet.remove(fotoActual)
+            }
+        }
+    }
+
+
 }

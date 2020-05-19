@@ -1,12 +1,15 @@
 package com.utn.parcial.Servicios
 
-import android.content.ClipData
-import android.util.Log
+import android.annotation.SuppressLint
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
+import android.os.Build
 import android.view.View
-import androidx.appcompat.view.menu.MenuView
+import androidx.annotation.RequiresApi
 import com.utn.parcial.database.appDatabase
 import com.utn.parcial.database.notaDao
 import com.utn.parcial.entities.Nota
+import java.util.*
 
 
 class servicesNota(v:View) {
@@ -35,13 +38,14 @@ class servicesNota(v:View) {
         this.error = ""
         return aux
     }
+
     fun getAllNotas(maceta_id: Int) : MutableList<Nota?>?
     {
 
         if(notaDao?.cantNotas(maceta_id)==0)
         {
 
-            this.newNota(Nota(maceta_id,"**/**/**","siembra"))
+            this.newNota(Nota(maceta_id, "" ,"siembra"))
         }
 
         return notaDao?.loadAllNotasMaceta(maceta_id)
@@ -55,4 +59,25 @@ class servicesNota(v:View) {
     fun deletNota (id: Int?){
         notaDao?.deleteFromId(id)
     }
+
+/*
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun obtenerFechaActual(): String? {
+        val formato = "yyyy-MM-dd"
+        return obtenerFechaConFormato(formato)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    @SuppressLint("SimpleDateFormat")
+    fun obtenerFechaConFormato(
+        formato: String?
+
+    ): String? {
+        val calendar: Calendar = Calendar.getInstance()
+        val date: Date = calendar.getTime()
+        val sdf: SimpleDateFormat
+        sdf = SimpleDateFormat(formato)
+        return sdf.format(date)
+    }
+*/
 }
